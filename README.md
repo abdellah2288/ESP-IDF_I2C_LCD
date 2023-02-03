@@ -1,4 +1,4 @@
-# ep_wifi
+# ep_i2c_lcd
 Component to facilitate i2c lcd communications
 ## Disclaimer
 This was made for educational purposes only and should not be used for production.
