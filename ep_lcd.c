@@ -12,9 +12,8 @@
 */
 
 #include "esp_err.h"
-#ifndef _LCD_I2C_H
 #include "ep_lcd.h"
-#endif
+#include <rom/ets_sys.h>
 
 static char *TAGLCD ="LCD";
 
@@ -104,26 +103,29 @@ void i2c_lcd_write_message(char* msg,int address)
 void i2c_lcd_init_sequence(int address)
 {
     i2c_lcd_send_command(0,0x03,address);
-    usleep(4500); // wait min 4.1ms
+    ets_delay_us(4500); // wait min 4.1ms
 
-    // second try
     i2c_lcd_send_command(0,0x03,address);
-    usleep(4500); // wait min 4.1ms
+    ets_delay_us(4500); // wait min 4.1ms
     
-    // third go!
     i2c_lcd_send_command(0,0x03,address);
-    usleep(150);
+    ets_delay_us(45000);
+
     i2c_lcd_send_command(0,0x02,address); // interface in 4 bit mode
-    usleep(200);
-    i2c_lcd_send_command(0,0x82,address); //function set
-    usleep(1000);
+    ets_delay_us(200);
+    
+    i2c_lcd_send_command(0,0x28,address); //function set
+    ets_delay_us(1000);
+    
     i2c_lcd_send_command(0,0x0c,address); //display on, cursor on, blinking on
-    usleep(50);
+    ets_delay_us(50);
+    
     i2c_lcd_send_command(0,0x01,address); //clear
-    usleep(2000);
+    ets_delay_us(2000);
+    
     i2c_lcd_send_command(0,0x06,address); //set write mode
     i2c_lcd_send_command(0,0x0c,address); //send cursor home
-    usleep(2000);
+    ets_delay_us(2000);
 }
 
 void i2c_lcd_clear_screen(int address)
