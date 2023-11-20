@@ -62,5 +62,5 @@ i2c_lcd_custom_char(int* pattern[], int location, int address);
 
 Contributions are welcome! If you find any issues or have improvements to suggest, please open an issue or submit a pull request.
 ## License
-[GPL v2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+This project is licensed under the [GPL v2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt) license.
