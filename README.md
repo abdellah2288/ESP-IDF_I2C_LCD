@@ -11,7 +11,7 @@ Connect your I2C-enabled LCD screen to the ESP32 using the specified GPIO pins i
 
 Clone this repository to your local machine:
 
-``` git clone https://github.com/yourusername/esp32-i2c-lcd-driver.git ```
+``` git clone https://github.com/abdellah2288/esp32-i2c-lcd-driver.git ```
 
 Navigate to the project directory:
 
