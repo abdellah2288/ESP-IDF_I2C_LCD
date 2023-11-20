@@ -11,19 +11,13 @@ Connect your I2C-enabled LCD screen to the ESP32 using the specified GPIO pins i
 
 Clone this repository to your local machine:
 
-    bash
-
 ``` git clone https://github.com/yourusername/esp32-i2c-lcd-driver.git ```
 
 Navigate to the project directory:
 
-    bash
-
 ```cd esp32-i2c-lcd-driver ```
 
 Build and flash the code to your ESP32:
-
-bash
 
   ```  idf.py build flash ```
 
